@@ -141,12 +141,14 @@ int main()
     }
  
 #endif
-    
+
+#if 0    
     //用处：常使用在宏函数中
     int varaNum = 0;
     do
     {
         printf("varaNum:%d\n",varaNum);
     }while(varaNum);
+#endif 
     return 0;
 }

@@ -32,6 +32,8 @@ drwxr-xr-x 7 root root 4096 12月  8 09:30 ..
 root@lvguanzhong-virtual-machine:/home# cd -
 /home/BasicC/BasicC
 root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# mv ../../dataType/ ./
+                                            //移动dataType到当前目录 ./表示当前目录
+                                            //移动dataType到当前目录 ./表示当前目录
 root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# 
 root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# ls -alh
 总计 20K
