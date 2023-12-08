@@ -52,5 +52,11 @@ int main()
         printf("array[%d] = %d\n",idx,array[idx]);
     }
 #endif
+
+    /*数组的越界访问*/
+    /*判断索引的有效性*/
+    printf("array[-1]: %d\n",array[-1]);
+    printf("array[10]: %d\n",array[10]);
+
     return 0;
 }
