@@ -1,0 +1,76 @@
+root@lvguanzhong-virtual-machine:/home# cd BasicC
+root@lvguanzhong-virtual-machine:/home/BasicC# ls -l
+总计 4
+drwxr-xr-x 3 root root 4096 12月  8 09:16 BasicC
+root@lvguanzhong-virtual-machine:/home/BasicC# pwd
+/home/BasicC
+root@lvguanzhong-virtual-machine:/home/BasicC# git clone git@github.com:xiangfeng1022/BasicC.git
+                                              //此时Github的远程仓库BasicC克隆到BasicC文件下
+root@lvguanzhong-virtual-machine:/home/BasicC# ls -alh
+总计 12K
+drwxrwxrwx 3 root root 4.0K 12月  8 09:16 .
+drwxr-xr-x 7 root root 4.0K 12月  8 09:30 ..
+drwxr-xr-x 3 root root 4.0K 12月  8 09:16 BasicC
+root@lvguanzhong-virtual-machine:/home/BasicC# ls
+BasicC
+root@lvguanzhong-virtual-machine:/home/BasicC# cd BasicC/
+root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# ls -alh
+总计 16K
+drwxr-xr-x 3 root root 4.0K 12月  8 09:16 .
+drwxrwxrwx 3 root root 4.0K 12月  8 09:16 ..
+drwxr-xr-x 8 root root 4.0K 12月  8 09:16 .git
+-rw-r--r-- 1 root root    8 12月  8 09:16 README.md
+root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# pwd
+/home/BasicC/BasicC
+root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# cd ../../
+root@lvguanzhong-virtual-machine:/home# ls -al dataType/
+总计 16
+drwxrwxrwx 2 root root 4096 12月  8 13:01 .
+drwxr-xr-x 7 root root 4096 12月  8 09:30 ..
+-rwxrwxrwx 1 root root 1460 12月  8 12:49 1.txt
+-rwxrwxrwx 1 root root 2584 12月  8 12:26 testVaraType.c
+root@lvguanzhong-virtual-machine:/home# cd -
+/home/BasicC/BasicC
+root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# mv ../../dataType/ ./
+root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# 
+root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# ls -alh
+总计 20K
+drwxr-xr-x 4 root root 4.0K 12月  8 13:15 .
+drwxrwxrwx 3 root root 4.0K 12月  8 09:16 ..
+drwxrwxrwx 2 root root 4.0K 12月  8 13:01 dataType
+drwxr-xr-x 8 root root 4.0K 12月  8 09:16 .git
+-rw-r--r-- 1 root root    8 12月  8 09:16 README.md
+root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# git status
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+
+未跟踪的文件:
+  （使用 "git add <文件>..." 以包含要提交的内容）
+        dataType/
+
+提交为空，但是存在尚未跟踪的文件（使用 "git add" 建立跟踪）
+root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# git add .
+root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# git status
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+
+要提交的变更：
+  （使用 "git restore --staged <文件>..." 以取消暂存）
+        新文件：   dataType/1.txt
+        新文件：   dataType/testVaraType.c
+
+root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# git commit -m "[新增]新增数据类型的代码"
+[master b531bdd] [新增]新增数据类型的代码
+ 2 files changed, 179 insertions(+)
+ create mode 100755 dataType/1.txt
+ create mode 100755 dataType/testVaraType.c
+root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# 
+root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# git push
+枚举对象中: 6, 完成.
+对象计数中: 100% (6/6), 完成.
+使用 2 个线程进行压缩
+压缩对象中: 100% (5/5), 完成.
+写入对象中: 100% (5/5), 2.13 KiB | 1.07 MiB/s, 完成.
+总共 5（差异 0），复用 0（差异 0），包复用 0
+To github.com:xiangfeng1022/BasicC.git
+   4940c80..b531bdd  master -> master
