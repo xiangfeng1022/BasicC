@@ -41,7 +41,7 @@ int main()
     /*清除脏数据 memset函数:用一个常量字节填充内存 */
     /* void *memset(void *s, int c, size_t n);
     memset()函数用s所指向的内存区域的前n个字节填充
-    常量字节c。*/
+    常量字节c。  用c填充 void*s地址 填充size_t n那么长*/
    
     memset(array, 0 ,sizeof(array));
     /*把array所指向的内存区域的 sizeof(array)的40个字节填充0*/
