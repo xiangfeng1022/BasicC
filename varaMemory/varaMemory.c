@@ -19,6 +19,6 @@ int main()
                 空间体现的是内存的大小。
     */
     int array[100];
-    
+    //
     return 0;
 }
