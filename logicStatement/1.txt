@@ -1,3 +1,32 @@
+cd BasicC
+ls -l
+
+pwd    
+/home/BasicC
+
+git clone git@github.com:xiangfeng1022/BasicC.git
+此时Github的远程仓库BasicC克隆到BasicC文件下
+
+ ls -alh
+ cd BasicC/
+ ls -alh
+ pwd
+/home/BasicC/BasicC
+cd ../../  到home目录下
+ls -al dataType/   查看写在home目录下的dataType文件夹
+
+cd -
+/home/BasicC/BasicC
+
+mv ../../dataType/ ./   移动dataType到当前目录 ./表示当前目录
+ls -alh
+git status
+git add .
+git commit -m "[新增]数据类型的代码"
+git push
+
+
+
 root@lvguanzhong-virtual-machine:/home# cd BasicC
 root@lvguanzhong-virtual-machine:/home/BasicC# ls -l
 总计 4
@@ -76,3 +105,62 @@ root@lvguanzhong-virtual-machine:/home/BasicC/BasicC# git push
 总共 5（差异 0），复用 0（差异 0），包复用 0
 To github.com:xiangfeng1022/BasicC.git
    4940c80..b531bdd  master -> master
+
+
+
+
+
+rand函数:  
+man 3 rand: 
+NAME
+      rand, rand_r, srand - pseudo-random number generator 伪随机数发生器
+用 #include <stdlib.h> 包含
+
+srand()函数是C语言中的一个随机数种子初始化函数，
+它的作用是为rand()函数生成随机数提供一个起始值。
+如果不使用srand()函数，那么每次程序运行时rand()函数都会使用相同的起始值，
+因此生成的随机数序列也是相同的。
+而使用srand()函数可以通过设置不同的种子值来产生不同的随机数序列。
+通常情况下，我们使用当前时间作为种子值，
+以保证每次运行程序时都能产生不同的随机数序列。具体用法如下：
+
+srand((unsigned int)time(NULL));
+
+man 2 time:
+NAME
+       time - get time in seconds 以秒为单位的时间
+用 #include <time.h> 包含
+
+
+
+ srand(time(NULL));
+     int randomNum = 0;
+    for(int idx = 0; idx < COUNT_NUM; idx++)
+   {
+        randomNum = rand() % COUNT_NUM + COUNT;
+        printf("rand:%d\n",randomNum);
+   }
+   
+    /*区别：int randomNum = 0 写在外面 
+     如果写在里面代码每次都会给局部变量分配空间再释放空间
+     运行效率不快*/
+   
+     srand(time(NULL));
+    for(int idx = 0; idx < COUNT_NUM; idx++)
+   {
+        int randomNum = rand() % COUNT_NUM + COUNT;
+        printf("rand:%d\n",randomNum);
+   }
+
+
+   *2 左移1 <<1  
+   /2 右移1 >>1
+
+什么情况下进程的CPU消耗会飙升?
+man pthread_cond_wait
+进程在等待或阻塞时不会使用CPU资源，因此进程的CPU消耗会在以下情况下飙升：
+进程处于无限循环状态，例如while(true)。
+进程执行了大量的计算密集型任务，例如排序、加密等操作。
+进程频繁地进行IO操作，例如读写文件、网络通信等。
+如果进程出现以上情况，CPU将会长时间地为该进程服务，导致CPU消耗飙升
+

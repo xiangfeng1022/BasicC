@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -128,8 +129,15 @@ int main()
 
 #if 0
     /*编码规范:变量尽量用驼峰式命令*/
-    //什么情况下进程的CPU消耗会飙升
-    //man pthread_cond_wit ????
+    
+    /*什么情况下进程的CPU消耗会飙升
+     进程在等待或阻塞时不会使用CPU资源，因此进程的CPU消耗会在以下情况下飙升：
+     进程处于无限循环状态，例如while(true)。
+     进程执行了大量的计算密集型任务，例如排序、加密等操作。
+     进程频繁地进行IO操作，例如读写文件、网络通信等。
+     如果进程出现以上情况，CPU将会长时间地为该进程服务，导致CPU消耗飙升*/
+    //man pthread_cond_wait 
+
     int circleTimes = COUNT_NUM >> 1;     //*2 左移1  /2 右移1
     int randomNum = 0;
     
@@ -142,13 +150,13 @@ int main()
  
 #endif
 
-#if 0    
+  
     //用处：常使用在宏函数中
     int varaNum = 0;
     do
     {
         printf("varaNum:%d\n",varaNum);
     }while(varaNum);
-#endif 
+ 
     return 0;
 }
