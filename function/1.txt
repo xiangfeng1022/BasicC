@@ -1,0 +1,31 @@
+1、
+函数参数:可以没有 也可以有
+函数返回值: 可以没有 也可以有
+     没有的情况需要写void
+     如果有，返回你想返回的数据类型 int long short char float double
+  
+2、
+什么叫API：Application Programming Interface 应用程序编程接口
+
+3、
+枚举  它也是一种数据类型 4个字节
+typedef enum STATUS_CODE
+{
+   ON_SUCCESS,
+   ON_ERROR,
+   ON_NULLPTR,
+   ON_MALLOCFAIL,
+}STATUS_CODE;
+
+/* 取别名 */
+方法一: enum STATUS_CODE STATUS_CODE;
+方法二: 
+typedef enum STATUS_CODE
+{
+   ON_SUCCESS,
+   ON_ERROR,
+   ON_NULLPTR,
+   ON_MALLOCFAIL,
+}STATUS_CODE;
+
+4、
