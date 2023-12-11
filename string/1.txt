@@ -1,0 +1,9 @@
+作业:手写字符串strlen strcpy strcmp strcat
+
+1、
+静态数组char buffer[] = "hello world" 在栈区
+字符串数组 char * ptr = "hello world" 存放在全局区
+char buffer[32] = "hello world"
+buffer:数组名就是数组的首地址
+
+char * ptr = "hello world" 存放在全局常量区 
