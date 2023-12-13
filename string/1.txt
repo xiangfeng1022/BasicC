@@ -1,4 +1,11 @@
-作业:手写字符串strlen strcpy strcmp strcat
+作业:手写字符串
+strlen: 计算一个字符串的长度  遇到'\0'停止  不遇到就一直统计
+
+strcpy: 字符串拷贝  不会进行越界处理
+
+strcmp: 字符串的比较 返回值为0两个字符串相等 用对应位置的字符串ASCII码值相减
+
+strcat: 字符串拼接 把一个字符串拼接到另一个字符串后面 不会越界处理
 
 1、
 静态数组char buffer[] = "hello world" 在栈区
