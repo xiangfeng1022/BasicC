@@ -1,11 +1,29 @@
 1、
-call:函数调用
+什么叫依赖: .o 文件就是依赖
 
 2、
-宏定义 和 typedef 有什么区别？
+Makefile是一种文件，其中包含了一系列规则来指定如何编译和链接程序。
+它通常用于C/C++项目中，但也可以用于其他编程语言。
+Makefile中的规则描述了源文件、目标文件和依赖关系之间的关系，以及如何生成目标文件。
+Makefile可以自动化编译过程，使得编译变得更加高效和方便。
 
-3、
-gcc -E main.c > main.i
-gcc -S main.i
-gcc -c main.s
-gcc main.o
+以下是一个简单的Makefile示例，用于编译一个名为hello的C程序：
+
+hello: main.o hello.o
+    gcc -o hello main.o hello.o
+
+main.o: main.c hello.h
+    gcc -c main.c
+
+hello.o: hello.c hello.h
+    gcc -c hello.c
+
+clean:
+    rm -f hello *.o
+
+在这个Makefile中，有三个规则：hello、main.o和hello.o。
+hello规则指定了如何生成可执行文件hello，它依赖于main.o和hello.o。
+main.o和hello.o规则分别指定了如何生成目标文件main.o和hello.o，
+它们分别依赖于main.c和hello.c以及头文件hello.h。
+最后，clean规则指定了如何清除生成的文件。
+
