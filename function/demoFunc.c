@@ -2,12 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include "calculateFunc.h"
+#include "myString.h"
 
 /*函数参数:可以没有 也可以有*/
 /*函数返回值: 可以没有 也可以有
      没有的情况需要写void
      如果有，返回你想返回的数据类型 int long short char float double
-  
+
 */
 
 /* 什么叫API：Application Programming Interface 应用程序编程接口 */
@@ -40,16 +41,16 @@ int myAddNum2(int num1, int num2)
 /* 枚举  它也是一种数据类型 4个字节*/
 typedef enum STATUS_CODE
 {
-   ON_SUCCESS,
-   ON_ERROR,
-   ON_NULLPTR,
-   ON_MALLOCFAIL,
-}STATUS_CODE;
+    ON_SUCCESS,
+    ON_ERROR,
+    ON_NULLPTR,
+    ON_MALLOCFAIL,
+} STATUS_CODE;
 
 /* 取别名 */
 /*
 方法一: enum STATUS_CODE STATUS_CODE;
-方法二: 
+方法二:
 typedef enum STATUS_CODE
 {
    ON_SUCCESS,
@@ -59,9 +60,8 @@ typedef enum STATUS_CODE
 }STATUS_CODE;
 */
 
-
 int main()
-{   
+{
 
 #if 0   
     /*函数调用*/
@@ -89,6 +89,8 @@ int main()
     int len = sizeof(status);
     printf("len:%d\n", status);
 #endif
+
+#if 0
     int num1 = 50;
     int num2 = 60;
     int sum = calculateAdd(num1, num2);
@@ -102,6 +104,31 @@ int main()
 
     int num4 = calculateDiv(num1, num2);
     printf("sum:%d\n", num4);
+#endif
+
+    //char *ptr = "hello\0 world"; //定义在全局区 不可以修改*ptr  所以拷贝 拼接 都不行
+    char array1[] = "gg";
+    char array[20] = {0};
+    char *ptr1 = "hell";
     
+/* */
+    char *ptr = NULL;
+    int len = 0;
+#if 0
+    len = strlen(ptr);
+#else
+    len = MYStrlen(ptr);
+#endif
+    printf("len= %d\n", len);
+
+    MYStrcpy(array, ptr);
+    printf("array: %s\n", array);
+
+    int ret = MYStrcmp(ptr1, ptr);
+    printf("ret: %d\n", ret);
+    
+    MYStrcat(array1, ptr1);
+    printf("array1: %s\n", array1);
+
     return 0;
 }
