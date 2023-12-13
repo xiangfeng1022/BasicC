@@ -1,0 +1,11 @@
+1、
+call:函数调用
+
+2、
+宏定义 和 typedef 有什么区别？
+
+3、
+gcc -E main.c > main.i
+gcc -S main.i
+gcc -c main.s
+gcc main.o
