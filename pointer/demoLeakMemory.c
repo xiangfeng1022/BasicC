@@ -48,6 +48,7 @@ int main()
 #endif
 
     printf("ptr:%c\n", *ptr);
+    
     if (ptr != NULL)
     {
         free(ptr);

@@ -6,7 +6,7 @@
 
 void task()
 {
-   #if 1
+
    /* 数组的特性之一: 存放相同的数据类型 */
     /* 作业1:  将数组array3排序 */
     int array1[BUFFER_SIZE] = {1, 2, 3, 4, 5};
@@ -30,7 +30,7 @@ void task()
     }
 
     /* 将数组array3排序 */
-#endif
+
 
 }
 

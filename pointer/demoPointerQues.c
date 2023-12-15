@@ -43,14 +43,16 @@ int main()
     }
 #endif
 
-    char *ptr2 = NULL;
+    char *ptr2 = NULL; //在栈空间
 #if 1
-    ptr2 = "zhangsan";
+    ptr2 = "zhangsan"; //字符串在全局常量区
 #else
     strcpy(ptr2, "zhangsan"); 
 #endif
 
     printf("ptr2:%s\n", ptr2);
     
+
+ 
     return 0;
 }

@@ -9,5 +9,7 @@
 
 2、
 valgrind 安装
+
+查内存泄漏
 valgrind --tool=memcheck --leak-check=yes --show-reachable=yes ./XXX  
 ./XXX  这个是可执行文件
